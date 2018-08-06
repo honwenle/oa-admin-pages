@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>升级浏览器</title>
+    <style>
+      body{
+        text-align: center;
+      }
+    ol, ul {
+    list-style: none;
+}.pt10 {
+    padding-top: 10px;
+}.OtherBrowser li {
+    display: inline-block;
+    width: 132px;
+    text-align: center;
+    margin-bottom: 25px;
+}a:link, a:visited {
+    color: #2c9ab7;
+    text-decoration: none;
+}.OtherBrowser li img {
+    width: 70px;
+    margin-bottom: 10px;
+}</style>
+  </head>
+  <body>
+    <h2>
+      如果您使用的是360安全浏览器，请切换到极速模式，如图：
+    </h2>
+    <img src="ieimg/360.jpg" alt="切换到极速模式">
+    <h2>
+      如果您正在使用低版本IE浏览器，请升级或使用以下浏览器重新打开当前链接：
+    </h2>
+    <ul class="OtherBrowser pt10">
+      <li><a href="http://rj.baidu.com/soft/detail/14744.html?ald" target="_blank"><img src="ieimg/GoogleChrome.png"><br>Chrome浏览器</a></li>
+      <li><a href="http://rj.baidu.com/soft/detail/11843.html?ald" target="_blank"><img src="ieimg/Firefox.png"><br>Firefox浏览器</a></li>
+      <li><a href="http://rj.baidu.com/soft/detail/17451.html?ald" target="_blank"><img src="ieimg/360Browser.png"><br>360安全浏览器</a></li>
+      <li><a href="http://rj.baidu.com/soft/detail/16490.html?ald" target="_blank"><img src="ieimg/QqBrowser.png"><br>QQ浏览器</a></li>
+      <li><a href="http://rj.baidu.com/soft/detail/14754.html?ald" target="_blank"><img src="ieimg/Sogou.png"><br>搜狗浏览器</a></li>
+    </ul>
+    <script>
+      var ua = window.navigator.userAgent;
+      if (ua.indexOf('MSIE') < 0) {
+        var id = location.href.match(/id=\d+/g);
+        var token = location.href.match(/token=.+/g);
+        if (id.length > 0 && token.length > 0) {
+          id = id[0].split('=')[1]
+          token = token[0].split('=')[1]
+          location.href = '/#/entrycomplete/' + id + '?token=' + token;
+        } else {
+          alert('无效链接');
+        }
+      }
+    </script>
+  </body>
+</html>
